@@ -1,0 +1,55 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.9.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'jpabook'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-devtools'
+
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
+
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+//처음 시도한것들
+//
+//스프링 부트 매커니즘
+//
+//멀티 모듈 단일 프로젝트
+//
+//어플리캐이션 -> 애플리케이션 차이 설명
+//
+//설명하면서 예가 필요하다
+//애플리케이션 비즈니스와 도메인 비즈니스, 시스템을 알고 있는가
+//
+//external-api, internal-api 둘의 차이
+//
+//독립모듈
+//가장 쉬운 예제로 독립모듈을 한번 설명하고 그 다음에 나머지 설명
+//
+//독립모듈과 core의 차이를 명확하게 설명
